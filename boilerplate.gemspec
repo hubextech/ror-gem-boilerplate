@@ -28,4 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rspec-rails"
   spec.add_dependency "pry"
   spec.add_dependency "activestorage"
+
+  spec.executables = ["boilerplate:install"]
+
+  spec.post_install_message = "To use devise and active storage functionalities type this command 'boilerplate:install'"
 end

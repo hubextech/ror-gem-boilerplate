@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+# Check if we are within a Rails application
+unless defined?(Rails)
+  require 'rails'
+  # require_relative '../config/application'
+  # Rails.application.require_environment!
+end
+
+# Change current working directory to Rails application root
+# Dir.chdir(Rails.application.root)
+
+# Your script code goes here
+puts "Hello from my_script!"
+
+# Run Rails commands using `system` method
+system("rails active_storage:install")
+puts "Active Storage installed"
+
+system("rails generate devise:install")
+system("rails generate devise BoilerplateUser")
+puts "Devise installed"
+
+system("rails db:migrate")
+puts "Migrated both"
